@@ -63,7 +63,7 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 # ---------------- LOAD MODEL ----------------
-#model = load_model("models/fruit_model.h5", compile=False)
+model = load_model("models/fruit_model.h5", compile=False)
 
 classes = ['overripe', 'ripe', 'unripe']
 
