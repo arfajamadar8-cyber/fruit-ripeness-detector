@@ -12,7 +12,7 @@ st.set_page_config(page_title="Fruit Ripeness Detector", page_icon="🍎", layou
 
 # ---------------- MODEL PATH----------------
 
-MODEL_PATH = "fruit_model.h5"
+MODEL_PATH = "fruit_model.keras"
 
 # ---------------- DOWNLOAD MODEL FROM GOOGLE DRIVE ----------------
 def download_model():
