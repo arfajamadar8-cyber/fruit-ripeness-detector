@@ -17,7 +17,7 @@ MODEL_PATH = "fruit_model.keras"
 # ---------------- DOWNLOAD MODEL FROM GOOGLE DRIVE ----------------
 def download_model():
     if not os.path.exists(MODEL_PATH):
-        url = "https://drive.google.com/uc?id=11drORPa2Yb6wH6NFEnwgqhhvEtZRbrPb"
+        url = "https://drive.google.com/uc?id=1Wlie4NcWNAW48px094QSzRJ92tdCFk0v"
 
         session = requests.Session()
         response = session.get(url, stream=True)
