@@ -17,7 +17,6 @@ MODEL_PATH = "fruit_model.h5"
 def download_model():
     if not os.path.exists(MODEL_PATH):
         url = "https://drive.google.com/uc?id=11drORPa2Yb6wH6NFEnwgqhhvEtZRbrPb"
-        gdown.download(url, MODEL_PATH, quiet=False, fuzzy=True)
 
         session = requests.Session()
         response = session.get(url, stream=True)
