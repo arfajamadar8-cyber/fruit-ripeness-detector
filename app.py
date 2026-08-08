@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 import base64
 import os
-import gdown
+import requests
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(page_title="Fruit Ripeness Detector", page_icon="🍎", layout="centered")
@@ -18,6 +18,16 @@ def download_model():
     if not os.path.exists(MODEL_PATH):
         url = "https://drive.google.com/uc?id=11drORPa2Yb6wH6NFEnwgqhhvEtZRbrPb"
         gdown.download(url, MODEL_PATH, quiet=False, fuzzy=True)
+
+        session = requests.Session()
+        response = session.get(url, stream=True)
+        with open (MODEL_PATH, "wb" ) as f:
+            for chunk in response.iter_content(1024):
+                if chunk:
+                    f.write(chunk)
+
+
+download_model()
 
 # CALL FUNCTION (VERY IMPORTANT)
 download_model()
