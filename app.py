@@ -32,7 +32,7 @@ download_model()
 download_model()
 
 # ---------------- LOAD MODEL ----------------
-model = load_model(MODEL_PATH, compile=False)
+model = load_model(MODEL_PATH, compile=False, safe_mode=False)
 
 classes = ['overripe', 'ripe', 'unripe']
 
