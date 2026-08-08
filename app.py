@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 import base64
 import os
-import requests
+import gdown
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(page_title="Fruit Ripeness Detector", page_icon="🍎", layout="centered")
@@ -18,13 +18,7 @@ MODEL_PATH = "fruit_model.keras"
 def download_model():
     if not os.path.exists(MODEL_PATH):
         url = "https://drive.google.com/uc?id=1Wlie4NcWNAW48px094QSzRJ92tdCFk0v"
-
-        session = requests.Session()
-        response = session.get(url, stream=True)
-        with open (MODEL_PATH, "wb" ) as f:
-            for chunk in response.iter_content(1024):
-                if chunk:
-                    f.write(chunk)
+        gdown.download(url, MODEL_PATH, quite=False)
 
 
 download_model()
