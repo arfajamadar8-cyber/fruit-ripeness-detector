@@ -18,7 +18,7 @@ MODEL_PATH = "fruit_model.keras"
 def download_model():
     if not os.path.exists(MODEL_PATH):
         url = "https://drive.google.com/uc?id=1Wlie4NcWNAW48px094QSzRJ92tdCFk0v"
-        gdown.download(url, MODEL_PATH, quite=False)
+        gdown.download(url, MODEL_PATH, quiet=False)
 
 
 download_model()
